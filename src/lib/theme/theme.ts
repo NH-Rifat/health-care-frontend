@@ -1,14 +1,16 @@
 import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
-      main: "#13B8A7",
+      main: "#1586FD",
     },
     secondary: {
       main: "#666f73",
+      light: "#f8f8f8",
     },
   },
+
   components: {
     MuiButton: {
       defaultProps: {
@@ -16,7 +18,7 @@ const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          color: "white",
+          padding: "8px 24px",
         },
       },
     },
@@ -32,6 +34,5 @@ const theme = createTheme({
     },
   },
 });
-theme.shadows[1] = "0px 5px 22px lightgray";
 
-export default theme;
+theme.shadows[1] = "0px 5px 22px lightgray";

@@ -1,11 +1,6 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import Image from "next/image";
-import gridImage from "@/assets/svgs/grid.svg";
-import arrowImage from "@/assets/svgs/arrow.svg";
-import doctor1Image from "@/assets/images/doctor1.png";
-import doctor2Image from "@/assets/images/doctor2.png";
-import doctor3Image from "@/assets/images/doctor3.png";
-import stethoscopeImage from "@/assets/images/Stetoscope.png";
+import assets from "@/assets";
 
 const HeroSection = () => {
   return (
@@ -25,7 +20,7 @@ const HeroSection = () => {
             top: "-120px",
           }}
         >
-          <Image src={gridImage} alt="doctor1" />
+          <Image src={assets.svgs.grid} alt="grid Image" />
         </Box>
         <Typography variant="h2" component="h1" fontWeight={600}>
           Healthier Hearts
@@ -77,7 +72,7 @@ const HeroSection = () => {
             top: "-30px",
           }}
         >
-          <Image src={arrowImage} width={100} height={100} alt="arrow" />
+          <Image src={assets.svgs.arrow} width={100} height={100} alt="arrow" />
         </Box>
         <Box
           sx={{
@@ -86,10 +81,20 @@ const HeroSection = () => {
           }}
         >
           <Box mt={4}>
-            <Image src={doctor1Image} width={240} height={380} alt="doctor1" />
+            <Image
+              src={assets.images.doctor1}
+              width={240}
+              height={380}
+              alt="doctor1"
+            />
           </Box>
           <Box>
-            <Image src={doctor2Image} width={240} height={350} alt="doctor2" />
+            <Image
+              src={assets.images.doctor2}
+              width={240}
+              height={350}
+              alt="doctor2"
+            />
           </Box>
         </Box>
         <Box
@@ -99,7 +104,12 @@ const HeroSection = () => {
             left: "150px",
           }}
         >
-          <Image src={doctor3Image} width={240} height={240} alt="doctor3" />
+          <Image
+            src={assets.images.doctor3}
+            width={240}
+            height={240}
+            alt="doctor3"
+          />
         </Box>
         <Box
           sx={{
@@ -110,7 +120,7 @@ const HeroSection = () => {
           }}
         >
           <Image
-            src={stethoscopeImage}
+            src={assets.images.stethoscope}
             width={180}
             height={180}
             alt="doctor3"
