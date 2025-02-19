@@ -5,7 +5,7 @@ import arrowImage from "@/assets/svgs/arrow.svg";
 import doctor1Image from "@/assets/images/doctor1.png";
 import doctor2Image from "@/assets/images/doctor2.png";
 import doctor3Image from "@/assets/images/doctor3.png";
-import stethoscopeImage from "@/assets/images/stethoscope.png";
+import stethoscopeImage from "@/assets/images/Stetoscope.png";
 
 const HeroSection = () => {
   return (
@@ -49,7 +49,14 @@ const HeroSection = () => {
         </Typography>
         <Box sx={{ display: "flex", gap: 2 }}>
           <Button>Make appointment</Button>
-          <Button variant="outlined">Contact us</Button>
+          <Button
+            variant="outlined"
+            sx={{
+              color: "primary.main",
+            }}
+          >
+            Contact us
+          </Button>
         </Box>
       </Box>
 
@@ -102,7 +109,12 @@ const HeroSection = () => {
             zIndex: "-1",
           }}
         >
-          <Image src={doctor3Image} width={180} height={180} alt="doctor3" />
+          <Image
+            src={stethoscopeImage}
+            width={180}
+            height={180}
+            alt="doctor3"
+          />
         </Box>
       </Box>
     </Container>
