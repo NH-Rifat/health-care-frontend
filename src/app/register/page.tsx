@@ -23,32 +23,31 @@ import PHInput from "@/components/Forms/PHInput";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-export const patientValidationSchema = z.object({
-  name: z.string().min(1, "Please enter your name!"),
-  email: z.string().email("Please enter a valid email address!"),
-  contactNumber: z
-    .string()
-    .regex(/^\d{11}$/, "Please provide a valid phone number!"),
-  address: z.string().min(1, "Please enter your address!"),
-});
-
-export const validationSchema = z.object({
-  password: z.string().min(6, "Must be at least 6 characters"),
-  patient: patientValidationSchema,
-});
-
-export const defaultValues = {
-  password: "",
-  patient: {
-    name: "",
-    email: "",
-    contactNumber: "",
-    address: "",
-  },
-};
-
 const RegisterPage = () => {
   const router = useRouter();
+  const defaultValues = {
+    password: "",
+    patient: {
+      name: "",
+      email: "",
+      contactNumber: "",
+      address: "",
+    },
+  };
+
+  const patientValidationSchema = z.object({
+    name: z.string().min(1, "Please enter your name!"),
+    email: z.string().email("Please enter a valid email address!"),
+    contactNumber: z
+      .string()
+      .regex(/^\d{11}$/, "Please provide a valid phone number!"),
+    address: z.string().min(1, "Please enter your address!"),
+  });
+
+  const validationSchema = z.object({
+    password: z.string().min(6, "Must be at least 6 characters"),
+    patient: patientValidationSchema,
+  });
 
   const handleRegister = async (values: FieldValues) => {
     const data = modifyPayload(values);
